@@ -18,12 +18,13 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
+  background-color: #FFFFFF;
   border-bottom: 1px solid #eee;
 }
 
 .logo {
   color: #9B5DE5;
-  font-size: 1.6rem;
+  font-size: 24px;
 }
 
 nav {
@@ -35,6 +36,8 @@ nav ul {
   display: flex;
   gap: 20px;
   font-size: 0.95rem;
+  margin: 0;
+  padding: 0;
 }
 
 .menu {
@@ -44,10 +47,10 @@ nav ul {
 }
 
 .menu li a {
+  margin-left: 20px;
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  transition: color 0.3s ease;
 }
 
 .menu li a:hover {

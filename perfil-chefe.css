@@ -31,15 +31,13 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
+  background-color: #FFFFFF;
   border-bottom: 1px solid #eee;
-  background-color: var(--bg-primary);
 }
 
 header .logo {
-  color: var(--accent-lilac);
-  font-size: 1.6rem;
-  font-weight: bold;
-  margin: 0;
+  color: #9B5DE5;
+  font-size: 24px;
 }
 
 nav {
@@ -62,18 +60,18 @@ nav ul {
 }
 
 .menu li a {
+  margin-left: 20px;
   text-decoration: none;
-  color: var(--text-primary);
+  color: #333;
   font-weight: 500;
-  transition: color 0.3s ease;
 }
 
 .menu li a:hover {
-  color: var(--accent-lilac);
+  color: #9B5DE5;
 }
 
 .menu li a.active {
-  color: var(--accent-lilac);
+  color: #9B5DE5;
 }
 
 main {
