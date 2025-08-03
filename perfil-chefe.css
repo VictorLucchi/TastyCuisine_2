@@ -8,11 +8,11 @@ body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
   color: #333;
-  background-color: #f8f9fa;
+  background-color: #F6F6F6;
 }
 
 header {
-  background: linear-gradient(135deg, #4CAF50, #45a049);
+  background: linear-gradient(135deg, #C8E6C9, #9B5DE5);
   color: white;
   padding: 1rem 0;
   position: sticky;
@@ -43,7 +43,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #c8e6c9;
+  color: #E1D5F5;
 }
 
 main {
@@ -53,7 +53,7 @@ main {
 }
 
 .perfil-chefe {
-  background: white;
+  background: #FFFFFF;
   border-radius: 15px;
   padding: 2rem;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -72,12 +72,12 @@ main {
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  border: 5px solid #4CAF50;
+  border: 5px solid #C8E6C9;
 }
 
 .chefe-info h2 {
   font-size: 2.5rem;
-  color: #4CAF50;
+  color: #9B5DE5;
   margin-bottom: 0.5rem;
 }
 
@@ -88,10 +88,10 @@ main {
 }
 
 .chefe-detalhes h3 {
-  color: #4CAF50;
+  color: #9B5DE5;
   font-size: 1.5rem;
   margin: 2rem 0 1rem 0;
-  border-bottom: 2px solid #4CAF50;
+  border-bottom: 2px solid #9B5DE5;
   padding-bottom: 0.5rem;
 }
 
@@ -107,10 +107,10 @@ main {
 }
 
 #chefe-especialidades-lista li {
-  background: #f0f8f0;
+  background: #E1D5F5;
   padding: 0.5rem 1rem;
   margin: 0.5rem 0;
-  border-left: 4px solid #4CAF50;
+  border-left: 4px solid #9B5DE5;
   border-radius: 5px;
 }
 
@@ -123,13 +123,13 @@ main {
 }
 
 .chefe-contato i {
-  color: #4CAF50;
+  color: #9B5DE5;
   width: 20px;
 }
 
 .btn-voltar {
   display: inline-block;
-  background: #4CAF50;
+  background: #9B5DE5;
   color: white;
   padding: 1rem 2rem;
   text-decoration: none;
@@ -139,11 +139,12 @@ main {
 }
 
 .btn-voltar:hover {
-  background: #45a049;
+  background: #D7C2FF;
+  color: #333;
 }
 
 footer {
-  background: #333;
+  background: #9B5DE5;
   color: white;
   text-align: center;
   padding: 2rem 0;
@@ -172,7 +173,7 @@ footer {
 }
 
 .footer-social i:hover {
-  color: #4CAF50;
+  color: #C8E6C9;
 }
 
 @media (max-width: 768px) {

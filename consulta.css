@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #fff;
+  background-color: #FFFFFF;
   color: #333;
 }
 
@@ -19,7 +19,7 @@ header {
 }
 
 .logo {
-  color: #b266ff;
+  color: #9B5DE5;
   font-size: 1.6rem;
 }
 
@@ -38,7 +38,7 @@ nav ul {
 
 .consulta-container h2 {
   font-size: 32px;
-  color: #a259ff;
+  color: #9B5DE5;
   margin-bottom: 40px;
 }
 
@@ -50,8 +50,8 @@ nav ul {
 }
 
 .card {
-  background-color: #f8f4fc;
-  border: 2px solid #e6d6ff;
+  background-color: #E1D5F5;
+  border: 2px solid #D7C2FF;
   border-radius: 16px;
   padding: 20px;
   width: 280px;
@@ -70,7 +70,7 @@ nav ul {
 }
 
 .card h3 {
-  color: #a259ff;
+  color: #9B5DE5;
   font-size: 20px;
   margin-bottom: 10px;
 }
@@ -82,7 +82,7 @@ nav ul {
 
 .card a {
   color: #fff;
-  background-color: #a259ff;
+  background-color: #9B5DE5;
   padding: 8px 16px;
   border-radius: 8px;
   text-decoration: none;
@@ -111,7 +111,7 @@ main {
 
 /* Estilo original do footer */
 footer {
-  background: #fcd6ec;
+  background: #FEC8D8;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -121,7 +121,7 @@ footer {
 }
 
 footer h3 {
-  color: #b266ff;
+  color: #9B5DE5;
 }
 
 .footer-links a {

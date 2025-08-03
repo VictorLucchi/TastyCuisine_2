@@ -7,12 +7,12 @@
 }
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #000000;
   line-height: 1.6;
 }
 header {
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
@@ -24,9 +24,9 @@ header {
 }
 
 header .logo {
-  color: #b266ff; /* Ajustado para seu padrão lilás */
+  color: #9B5DE5;
   font-weight: 700;
-  font-size: 1.6rem; /* 20px = 1.25rem, usei 1.6rem para ficar consistente */
+  font-size: 1.6rem;
   margin: 0;
 }
 
@@ -47,12 +47,12 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #b266ff;
+  color: #9B5DE5;
   text-decoration: underline;
 }
 
 nav ul li a.active {
-  color: #b266ff;
+  color: #9B5DE5;
   font-weight: 600;
 }
 
@@ -86,7 +86,7 @@ nav ul li a.active {
   gap: 15px;
 }
 .tag {
-  background-color: #FFBFD8;
+  background-color: #F8BBDA;
   color: #6C1E40;
   padding: 6px 14px;
   border-radius: 20px;
@@ -109,7 +109,7 @@ nav ul li a.active {
   min-width: 300px;
 }
 h2 {
-  color: #D8A4F4;
+  color: #9B5DE5;
   font-size: 20px;
   margin-bottom: 15px;
 }
@@ -124,8 +124,8 @@ li {
   text-align: center;
 }
 .botao button {
-  background-color: #F76C6C;
-  color: white;
+  background-color: #F8BBDA;
+  color: #333;
   border: none;
   padding: 12px 24px;
   border-radius: 10px;
@@ -133,7 +133,7 @@ li {
   cursor: pointer;
 }
 footer {
-  background: #fcd6ec;
+  background: #FEC8D8;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -143,7 +143,7 @@ footer {
 }
 
 footer h3 {
-  color: #b266ff;
+  color: #9B5DE5;
 }
 
 .footer-links a {

@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #fff;
+  background-color: #FFFFFF;
   color: #333;
 }
 
@@ -15,12 +15,12 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  background-color: white;
+  background-color: #FFFFFF;
   border-bottom: 1px solid #eee;
 }
 
 header h1 {
-  color: #a259ff;
+  color: #9B5DE5;
   font-size: 24px;
 }
 
@@ -32,7 +32,7 @@ nav a {
 }
 
 nav a.active {
-  color: #a259ff;
+  color: #9B5DE5;
 }
 
 .sobre-container {
@@ -48,7 +48,7 @@ nav a.active {
 }
 
 .titulo-secao h1 {
-  color: #a259ff;
+  color: #9B5DE5;
   font-size: 36px;
   margin-bottom: 15px;
 }
@@ -84,7 +84,7 @@ nav a.active {
 }
 
 .missao-texto h2 {
-  color: #a259ff;
+  color: #9B5DE5;
   font-size: 28px;
   margin-bottom: 20px;
 }
@@ -105,12 +105,12 @@ nav a.active {
 }
 
 .valor-card {
-  background: #f8f4ff;
+  background: #E1D5F5;
   border-radius: 15px;
   padding: 30px 20px;
   text-align: center;
   width: 280px;
-  box-shadow: 0 4px 15px rgba(162, 89, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(155, 93, 229, 0.1);
   transition: transform 0.3s ease;
 }
 
@@ -124,7 +124,7 @@ nav a.active {
 }
 
 .valor-card h3 {
-  color: #a259ff;
+  color: #9B5DE5;
   font-size: 20px;
   margin-bottom: 15px;
 }
@@ -143,7 +143,7 @@ nav a.active {
 }
 
 .historia-secao h2 {
-  color: #a259ff;
+  color: #9B5DE5;
   font-size: 28px;
   margin-bottom: 25px;
 }
@@ -157,7 +157,7 @@ nav a.active {
 
 .assinatura {
   font-style: italic;
-  color: #a259ff;
+  color: #9B5DE5;
   font-weight: 500;
   margin-top: 30px;
 }
@@ -185,7 +185,7 @@ nav a.active {
 }
 
 footer {
-  background: #fcd6ec;
+  background: #FEC8D8;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -195,7 +195,7 @@ footer {
 }
 
 footer h3 {
-  color: #b266ff;
+  color: #9B5DE5;
 }
 
 .footer-links a {
@@ -227,9 +227,9 @@ nav {
 }
 
 .menu li a:hover {
-  color: #a259ff;
+  color: #9B5DE5;
 }
 
 .menu li a.active {
-  color: #a259ff;
+  color: #9B5DE5;
 }
