@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #fff0f9;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  color: #b266ff;
+  font-size: 1.6rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  font-size: 0.95rem;
+}
+
+nav ul li a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 30px 20px;
+}
+
+.intro {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.restaurantes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 25px;
+}
+
+.restaurante-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.restaurante-card:hover {
+  transform: scale(1.03);
+}
+
+.restaurante-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.restaurante-card h2 {
+  color: #b266ff;
+  margin: 10px 0 8px;
+}
+
+.restaurante-card p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+
+.restaurante-card a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: white;
+  background: #b266ff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.restaurante-card a:hover {
+  background: #a055e0;
+}
+
+.cadastro-restaurante {
+  margin-top: 60px;
+  background: #fef6ff;
+  padding: 40px 20px;
+  border-top: 3px dashed #b266ff;
+  border-radius: 20px;
+}
+
+.cadastro-restaurante h2 {
+  color: #b266ff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#form-restaurante {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#form-restaurante input,
+#form-restaurante textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline-color: #b266ff;
+}
+
+#form-restaurante button {
+  background: #b266ff;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#form-restaurante button:hover {
+  background: #9a4cd6;
+}
+
+footer {
+  background: #fcd6ec;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+}
+
+footer h3 {
+  color: #b266ff;
+}
+
+.footer-links a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #555;
+}
+
+.footer-social i {
+  margin-left: 15px;
+  font-size: 1.2rem;
+  color: #333;
+}

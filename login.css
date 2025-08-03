@@ -1,0 +1,148 @@
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: rgb(185, 135, 135);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== MENU (Header, Logo, Nav) ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  color: #b266ff;
+  font-size: 1.6rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  font-size: 0.95rem;
+}
+
+nav ul li a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* ===== FORMULÁRIO (mantido exatamente como estava) ===== */
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.login-container {
+  background: #2b2540;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(180, 100, 255, 0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-container h1 {
+  color: #fcd6ec;
+  margin-bottom: 24px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 6px;
+  color: #ddd;
+  font-size: 0.9rem;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  border: none;
+  background-color: #372b52;
+  color: white;
+  font-size: 1rem;
+}
+
+.login-form input::placeholder {
+  color: #bbb;
+}
+
+.login-form button {
+  width: 100%;
+  background: #b266ff;
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-form button:hover {
+  background: #9a4ce0;
+}
+
+.cadastro {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  text-align: center;
+  color: #ccc;
+}
+
+.cadastro a {
+  color: #ff4b91;
+  text-decoration: none;
+}
+
+.cadastro a:hover {
+  text-decoration: underline;
+}
+footer {
+  background: #fcd6ec;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+}
+
+footer h3 {
+  color: #b266ff;
+}
+
+.footer-links a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #555;
+}
+
+.footer-social i {
+  margin-left: 15px;
+  font-size: 1.2rem;
+  color: #333;
+}
