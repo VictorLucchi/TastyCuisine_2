@@ -20,6 +20,10 @@ header {
   margin: 0;
 }
 
+nav {
+  display: flex;
+}
+
 nav ul {
   list-style: none;
   display: flex;
@@ -29,21 +33,25 @@ nav ul {
   padding: 0;
 }
 
-nav ul li a {
-  color: rgb(0, 0, 0);
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu li a {
   text-decoration: none;
+  color: #333;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-  text-decoration: underline;
+.menu li a:hover {
   color: #9B5DE5;
 }
 
-nav ul li a.active {
+.menu li a.active {
   color: #9B5DE5;
-  font-weight: 600;
 }
 
 

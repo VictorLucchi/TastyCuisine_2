@@ -30,19 +30,28 @@ header {
   font-weight: bold;
 }
 
-.menu {
+nav {
   display: flex;
+}
+
+.menu {
   list-style: none;
+  display: flex;
   gap: 2rem;
 }
 
-.menu a {
-  color: white;
+.menu li a {
   text-decoration: none;
-  transition: color 0.3s;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.menu a:hover {
+.menu li a:hover {
+  color: #E1D5F5;
+}
+
+.menu li a.active {
   color: #E1D5F5;
 }
 
