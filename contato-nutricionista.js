@@ -17,6 +17,24 @@ const nutricionistas = {
     especialidade: "Acompanhamento nutricional para atletas e veganos.",
     foto: "nutri3.jpg", 
     email: "camila.nutri@email.com"
+  },
+  mariana: {
+    nome: "Mariana Santos",
+    especialidade: "Nutrição clínica e distúrbios alimentares.",
+    foto: "nutri4.jpg",
+    email: "mariana.nutri@email.com"
+  },
+  pedro: {
+    nome: "Pedro Oliveira",
+    especialidade: "Nutrição esportiva e suplementação.",
+    foto: "nutri5.jpg",
+    email: "pedro.nutri@email.com"
+  },
+  julia: {
+    nome: "Júlia Ferreira",
+    especialidade: "Nutrição infantil e familiar.",
+    foto: "nutri6.jpg",
+    email: "julia.nutri@email.com"
   }
 };
 
