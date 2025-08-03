@@ -239,7 +239,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const searchTerm = searchInput.value.trim();
       
       if (searchTerm) {
-        window.location.href = `receitas.html?search=${encodeURIComponent(searchTerm)}`;
+        // Se estiver na página home, pesquisar nos carrosséis
+        if (window.location.pathname.includes('index.html') || window.location.pathname === '/') {
+          pesquisarNaHome(searchTerm);
+        } else {
+          // Se estiver na página receitas, redirecionar com parâmetro de pesquisa
+          window.location.href = `receitas.html?search=${encodeURIComponent(searchTerm)}`;
+        }
       }
     });
   }
@@ -277,6 +283,137 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// Função para pesquisar receitas
+function pesquisarReceitas(termo) {
+  const termoLower = termo.toLowerCase();
+  const cards = document.querySelectorAll('.card-receita');
+  let resultadosEncontrados = 0;
+  
+  cards.forEach(card => {
+    const nomeReceita = card.querySelector('h2').textContent.toLowerCase();
+    const categoria = card.querySelector('.tag').textContent.toLowerCase();
+    const ingredientesEncontrados = Object.keys(ingredientesReceitas).filter(ingrediente => 
+      ingrediente.includes(termoLower) && 
+      ingredientesReceitas[ingrediente].some(receita => 
+        receita.toLowerCase() === card.querySelector('h2').textContent.toLowerCase()
+      )
+    );
+    
+    const corresponde = nomeReceita.includes(termoLower) || 
+                       categoria.includes(termoLower) || 
+                       ingredientesEncontrados.length > 0;
+    
+    if (corresponde) {
+      card.style.display = 'block';
+      resultadosEncontrados++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+  
+  return resultadosEncontrados;
+}
+
+// Função para pesquisar na página home
+function pesquisarNaHome(termo) {
+  const termoLower = termo.toLowerCase();
+  const cards = document.querySelectorAll('.card-receita');
+  let resultadosEncontrados = 0;
+  
+  // Esconder todos os cards primeiro
+  cards.forEach(card => {
+    card.style.display = 'none';
+  });
+  
+  // Mostrar apenas os que correspondem à pesquisa
+  cards.forEach(card => {
+    const nomeReceita = card.querySelector('h2').textContent.toLowerCase();
+    const categoria = card.querySelector('.tag').textContent.toLowerCase();
+    const ingredientesEncontrados = Object.keys(ingredientesReceitas).filter(ingrediente => 
+      ingrediente.includes(termoLower) && 
+      ingredientesReceitas[ingrediente].some(receita => 
+        receita.toLowerCase() === card.querySelector('h2').textContent.toLowerCase()
+      )
+    );
+    
+    const corresponde = nomeReceita.includes(termoLower) || 
+                       categoria.includes(termoLower) || 
+                       ingredientesEncontrados.length > 0;
+    
+    if (corresponde) {
+      card.style.display = 'block';
+      resultadosEncontrados++;
+    }
+  });
+  
+  // Atualizar títulos das seções
+  const tituloAlta = document.querySelector('.receitas-em-alta h2');
+  const tituloAmadas = document.querySelector('.mais-amadas h2');
+  
+  if (tituloAlta) tituloAlta.textContent = `Resultados para: "${termo}" (${resultadosEncontrados} receitas)`;
+  if (tituloAmadas) tituloAmadas.style.display = 'none';
+  
+  // Esconder seção "Mais Amadas" se houver pesquisa
+  const secaoAmadas = document.querySelector('.mais-amadas');
+  if (secaoAmadas) secaoAmadas.style.display = 'none';
+  
+  // Mostrar botão para limpar pesquisa
+  mostrarBotaoLimparPesquisa();
+}
+
+// Função para mostrar botão de limpar pesquisa
+function mostrarBotaoLimparPesquisa() {
+  let botaoLimpar = document.getElementById('limpar-pesquisa');
+  if (!botaoLimpar) {
+    botaoLimpar = document.createElement('button');
+    botaoLimpar.id = 'limpar-pesquisa';
+    botaoLimpar.textContent = 'Limpar Pesquisa';
+    botaoLimpar.style.cssText = `
+      background: #ff6b6b;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      margin: 20px auto;
+      display: block;
+      font-weight: 500;
+    `;
+    
+    botaoLimpar.addEventListener('click', limparPesquisa);
+    
+    const secaoAlta = document.querySelector('.receitas-em-alta');
+    if (secaoAlta) {
+      secaoAlta.appendChild(botaoLimpar);
+    }
+  }
+}
+
+// Função para limpar pesquisa
+function limparPesquisa() {
+  // Mostrar todos os cards
+  document.querySelectorAll('.card-receita').forEach(card => {
+    card.style.display = 'block';
+  });
+  
+  // Restaurar títulos originais
+  const tituloAlta = document.querySelector('.receitas-em-alta h2');
+  const tituloAmadas = document.querySelector('.mais-amadas h2');
+  const secaoAmadas = document.querySelector('.mais-amadas');
+  
+  if (tituloAlta) tituloAlta.textContent = 'Receitas em Alta';
+  if (tituloAmadas) tituloAmadas.style.display = 'block';
+  if (secaoAmadas) secaoAmadas.style.display = 'block';
+  
+  // Limpar campo de pesquisa
+  const searchInput = document.getElementById('search-input');
+  if (searchInput) searchInput.value = '';
+  
+  // Remover botão de limpar
+  const botaoLimpar = document.getElementById('limpar-pesquisa');
+  if (botaoLimpar) botaoLimpar.remove();
+}
+
 // Funcionalidade específica da página receitas.html
 if (window.location.pathname.includes('receitas.html')) {
   document.addEventListener('DOMContentLoaded', () => {
@@ -287,7 +424,8 @@ if (window.location.pathname.includes('receitas.html')) {
     const mainTitle = document.querySelector('.receitas-main h1');
     
     if (searchTerm) {
-      if (mainTitle) mainTitle.textContent = `Resultados para: "${searchTerm}"`;
+      const resultados = pesquisarReceitas(searchTerm);
+      if (mainTitle) mainTitle.textContent = `Resultados para: "${searchTerm}" (${resultados} receitas)`;
       const searchInput = document.getElementById('search-input');
       if (searchInput) searchInput.value = searchTerm;
     } else if (categoria) {
@@ -328,6 +466,10 @@ if (window.location.pathname.includes('receitas.html')) {
         window.history.replaceState({}, '', newUrl);
         if (mainTitle) mainTitle.textContent = 'Bombando Esta Semana';
         
+        // Limpar campo de pesquisa ao usar filtros
+        const searchInput = document.getElementById('search-input');
+        if (searchInput) searchInput.value = '';
+        
         document.querySelectorAll('.card-receita').forEach(card => {
           const cardFiltros = card.getAttribute('data-filtro') || '';
           if (filtroValue === 'todas' || cardFiltros.includes(filtroValue)) {
@@ -338,6 +480,31 @@ if (window.location.pathname.includes('receitas.html')) {
         });
       });
     });
+    
+    // Pesquisa em tempo real na página de receitas
+    const searchInput = document.getElementById('search-input');
+    if (searchInput && !searchTerm) {
+      searchInput.addEventListener('input', (e) => {
+        const termo = e.target.value.trim();
+        if (termo.length >= 2) {
+          const resultados = pesquisarReceitas(termo);
+          if (mainTitle) mainTitle.textContent = `Resultados para: "${termo}" (${resultados} receitas)`;
+          
+          // Remover filtro ativo
+          document.querySelectorAll('.filtros button').forEach(btn => btn.classList.remove('ativo'));
+        } else if (termo.length === 0) {
+          // Mostrar todas as receitas quando campo estiver vazio
+          document.querySelectorAll('.card-receita').forEach(card => {
+            card.style.display = 'block';
+          });
+          if (mainTitle) mainTitle.textContent = 'Bombando Esta Semana';
+          
+          // Reativar filtro "Mais Curtidas"
+          const filtroTodas = document.querySelector('.filtros button[data-filtro="todas"]');
+          if (filtroTodas) filtroTodas.classList.add('ativo');
+        }
+      });
+    }
   });
 }
 
