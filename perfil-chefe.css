@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+header {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header .logo {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #c8e6c9;
+}
+
+main {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.perfil-chefe {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.chefe-header {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.chefe-header img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #4CAF50;
+}
+
+.chefe-info h2 {
+  font-size: 2.5rem;
+  color: #4CAF50;
+  margin-bottom: 0.5rem;
+}
+
+.chefe-info p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.chefe-detalhes h3 {
+  color: #4CAF50;
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem 0;
+  border-bottom: 2px solid #4CAF50;
+  padding-bottom: 0.5rem;
+}
+
+.chefe-detalhes p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+#chefe-especialidades-lista {
+  list-style: none;
+  padding-left: 0;
+}
+
+#chefe-especialidades-lista li {
+  background: #f0f8f0;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  border-left: 4px solid #4CAF50;
+  border-radius: 5px;
+}
+
+.chefe-contato p {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.chefe-contato i {
+  color: #4CAF50;
+  width: 20px;
+}
+
+.btn-voltar {
+  display: inline-block;
+  background: #4CAF50;
+  color: white;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-voltar:hover {
+  background: #45a049;
+}
+
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+
+.footer-text h3 {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links {
+  margin: 1rem 0;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0 1rem;
+}
+
+.footer-social i {
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.footer-social i:hover {
+  color: #4CAF50;
+}
+
+@media (max-width: 768px) {
+  .chefe-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .chefe-header img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  nav ul {
+    gap: 1rem;
+  }
+}

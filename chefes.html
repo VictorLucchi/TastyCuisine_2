@@ -37,22 +37,22 @@
       <div class="chefe-card">
         <img src="img/chefe1.jpg" alt="Chefe Maria Lima" />
         <h3>Maria Lima</h3>
-        <p>Especialista em culinária vegetariana e saudável. Criadora do restaurante “Sabor da Terra”.</p>
-        <button>Ver Perfil</button>
+        <p>Especialista em culinária vegetariana e saudável. Criadora do restaurante "Sabor da Terra".</p>
+        <button onclick="verPerfil('maria-lima')">Ver Perfil</button>
       </div>
 
       <div class="chefe-card">
         <img src="img/chefe2.jpg" alt="Chefe João Prado" />
         <h3>João Prado</h3>
-        <p>Chefe contemporâneo, une sabores tradicionais com técnicas modernas. Atende no “Gourmet Vital”.</p>
-        <button>Ver Perfil</button>
+        <p>Chefe contemporâneo, une sabores tradicionais com técnicas modernas. Atende no "Gourmet Vital".</p>
+        <button onclick="verPerfil('joao-prado')">Ver Perfil</button>
       </div>
 
       <div class="chefe-card">
         <img src="img/chefe3.jpg" alt="Chefe Carla Mendes" />
         <h3>Carla Mendes</h3>
         <p>Formada na França, traz inovação à culinária funcional e saudável.</p>
-        <button>Ver Perfil</button>
+        <button onclick="verPerfil('carla-mendes')">Ver Perfil</button>
       </div>
     </section>
     <section class="cadastro-chefe">
@@ -84,5 +84,10 @@
     </div>
   </footer>
   
+  <script>
+    function verPerfil(chefeId) {
+      window.location.href = `perfil-chefe.html?chefe=${chefeId}`;
+    }
+  </script>
 </body>
 </html>
