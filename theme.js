@@ -8,16 +8,18 @@ class ThemeManager {
 
   init() {
     this.setTheme(this.currentTheme);
-    this.themeToggle.addEventListener('click', () => this.toggleTheme());
+    if (this.themeToggle) {
+      this.themeToggle.addEventListener('click', () => this.toggleTheme());
+    }
   }
 
   setTheme(theme) {
     if (theme === 'dark') {
       document.documentElement.setAttribute('data-theme', 'dark');
-      this.themeToggle.textContent = '☀️';
+      if (this.themeToggle) this.themeToggle.textContent = '☀️';
     } else {
       document.documentElement.removeAttribute('data-theme');
-      this.themeToggle.textContent = '🌙';
+      if (this.themeToggle) this.themeToggle.textContent = '🌙';
     }
     this.currentTheme = theme;
     localStorage.setItem('theme', theme);
@@ -33,3 +35,12 @@ class ThemeManager {
 document.addEventListener('DOMContentLoaded', () => {
   new ThemeManager();
 });
+
+// Também inicializar se o script for carregado após o DOM
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    new ThemeManager();
+  });
+} else {
+  new ThemeManager();
+}
