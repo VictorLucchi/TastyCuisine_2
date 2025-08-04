@@ -118,8 +118,8 @@ input[type="file"] {
 
 button {
   margin-top: 10px;
-  background-color: #F8BBDA;
-  color: #333;
+  background-color: #9B5DE5;
+  color: #FFFFFF;
   font-weight: bold;
   padding: 14px;
   font-size: 16px;
@@ -130,7 +130,7 @@ button {
 }
 
 button:hover {
-  background-color: #FEC8D8;
+  background-color: #7C3AED;
 }
 
 footer {
