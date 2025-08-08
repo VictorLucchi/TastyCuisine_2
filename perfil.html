@@ -6,6 +6,7 @@
   <title>Perfil - Tasty Cuisine</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="perfil.css" />
+  <link rel="stylesheet" href="images.css" />
   <script defer src="perfil.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
@@ -32,8 +33,10 @@
 
   <main class="perfil-container">
     <aside class="perfil-card">
-      <div class="foto-perfil"></div>
-      <h2>Ayrton Senna</h2>
+      <div class="foto-perfil">
+        <img src="images/perfil/avatar-usuario.jpg" alt="Foto de perfil de Ayrton Senna" />
+      </div>
+      <h2>Ayrton Senna da Silva</h2>
       <p class="email">ayrtonsenna@gmail.com</p>
       <div class="progresso">
         <p>Progresso do Perfil (75%)</p>
@@ -56,10 +59,24 @@
 
       <div class="conteudo info ativa" id="info">
         <h3>Informações Pessoais</h3>
-        <label>Nome</label>
-        <input type="text" value="Ayrton Senna" />
+        <label>Nome Completo</label>
+        <input type="text" value="Ayrton Senna da Silva" />
+        <label>Nome de usuário</label>
+        <input type="text" value="ayrtonsenna" />
         <label>Email</label>
         <input type="email" value="ayrtonsenna@gmail.com" />
+        <label>Idade (opcional)</label>
+        <input type="number" value="34" min="1" max="120" />
+        <label>Restrições Alimentares/Alergias (opcional)</label>
+        <textarea placeholder="Ex: Intolerância à lactose, alergia a amendoim...">Nenhuma restrição alimentar</textarea>
+        <label>Tipo de conta</label>
+        <select>
+          <option value="usuario">Usuário comum</option>
+          <option value="chef">Chef</option>
+          <option value="restaurante">Restaurante</option>
+        </select>
+        <label>Dietas Preferidas (opcional)</label>
+        <input type="text" placeholder="Ex: Vegana, Low Carb, Mediterrânea..." />
         <button class="btn-roxo">Salvar Alterações</button>
       </div>
 
@@ -67,7 +84,9 @@
         <h3>Minhas Receitas</h3>
         <div class="cards-receitas">
           <div class="card">
-            <div class="imagem"></div>
+            <div class="imagem">
+              <img src="images/receitas/smoothie-verde.jpg" alt="Smoothie Verde Energético" />
+            </div>
             <div class="categoria">Café da Manhã</div>
             <h4>Smoothie Verde Energético</h4>
             <div class="info-receita">
@@ -78,7 +97,9 @@
             <button class="btn-roxo">Ver Receita</button>
           </div>
           <div class="card">
-            <div class="imagem"></div>
+            <div class="imagem">
+              <img src="images/receitas/curry-grao-bico.jpg" alt="Curry de Grão de Bico" />
+            </div>
             <div class="categoria">Vegano</div>
             <h4>Curry de Grão de Bico</h4>
             <div class="info-receita">
@@ -113,7 +134,7 @@
     </div>
     <div class="footer-social">
       <i class="fab fa-facebook"></i>
-      <i class="fab fa-twitter"></i>
+      
       <i class="fab fa-instagram"></i>
     </div>
   </footer>

@@ -168,8 +168,126 @@ abas.forEach(botao => {
   });
 });
 
+// Gerenciamento do perfil do usuário
+class PerfilManager {
+  constructor() {
+    this.perfil = JSON.parse(localStorage.getItem('perfilUsuario')) || {
+      nomeCompleto: 'Usuário Exemplo',
+      nomeUsuario: 'usuario',
+      email: 'usuario@exemplo.com',
+      idade: '',
+      restricoes: '',
+      tipoConta: 'usuario',
+      dietasPreferidas: ''
+    };
+  }
+
+  salvarPerfil(dadosPerfil) {
+    this.perfil = { ...this.perfil, ...dadosPerfil };
+    localStorage.setItem('perfilUsuario', JSON.stringify(this.perfil));
+  }
+
+  getPerfil() {
+    return this.perfil;
+  }
+
+  calcularProgresso() {
+    const camposObrigatorios = ['nomeCompleto', 'nomeUsuario', 'email', 'tipoConta'];
+    let camposPreenchidos = 0;
+    
+    camposObrigatorios.forEach(campo => {
+      if (this.perfil[campo] && this.perfil[campo].toString().trim() !== '') {
+        camposPreenchidos++;
+      }
+    });
+    
+    return Math.round((camposPreenchidos / camposObrigatorios.length) * 100);
+  }
+}
+
+const perfilManager = new PerfilManager();
+
+function carregarDadosPerfil() {
+  const perfil = perfilManager.getPerfil();
+  const infoSection = document.getElementById('info');
+  
+  const inputs = infoSection.querySelectorAll('input, textarea, select');
+  inputs[0].value = perfil.nomeCompleto;
+  inputs[1].value = perfil.nomeUsuario;
+  inputs[2].value = perfil.email;
+  inputs[3].value = perfil.idade || '';
+  inputs[4].value = perfil.restricoes || '';
+  inputs[5].value = perfil.tipoConta;
+  inputs[6].value = perfil.dietasPreferidas || '';
+  
+  // Atualizar card lateral
+  const nomeCard = document.querySelector('.perfil-card h2');
+  const emailCard = document.querySelector('.perfil-card .email');
+  nomeCard.textContent = perfil.nomeCompleto;
+  emailCard.textContent = perfil.email;
+  
+  atualizarProgresso();
+}
+
+function salvarAlteracoesPerfil() {
+  const infoSection = document.getElementById('info');
+  const inputs = infoSection.querySelectorAll('input, textarea, select');
+  
+  const dadosPerfil = {
+    nomeCompleto: inputs[0].value,
+    nomeUsuario: inputs[1].value,
+    email: inputs[2].value,
+    idade: parseInt(inputs[3].value),
+    restricoes: inputs[4].value,
+    tipoConta: inputs[5].value,
+    dietasPreferidas: inputs[6].value
+  };
+  
+  perfilManager.salvarPerfil(dadosPerfil);
+  
+  const nomeCard = document.querySelector('.perfil-card h2');
+  nomeCard.textContent = dadosPerfil.nomeCompleto;
+  
+  atualizarProgresso();
+  atualizarTagsDietas(dadosPerfil.dietasPreferidas);
+  
+  alert('Perfil atualizado com sucesso!');
+}
+
+function atualizarProgresso() {
+  const progresso = perfilManager.calcularProgresso();
+  const textoProgresso = document.querySelector('.progresso p');
+  const barraPreenchida = document.querySelector('.preenchida');
+  
+  textoProgresso.textContent = `Progresso do Perfil (${progresso}%)`;
+  barraPreenchida.style.width = `${progresso}%`;
+}
+
+function atualizarTagsDietas(dietasTexto) {
+  const tagsContainer = document.querySelector('.tags');
+  tagsContainer.innerHTML = '';
+  
+  if (dietasTexto && dietasTexto.trim()) {
+    const dietas = dietasTexto.split(',').map(d => d.trim()).filter(d => d);
+    dietas.forEach(dieta => {
+      const tag = document.createElement('span');
+      tag.className = 'tag verde';
+      tag.textContent = dieta;
+      tagsContainer.appendChild(tag);
+    });
+  }
+}
+
 // Carregar conteúdo na inicialização se as abas estiverem ativas
 document.addEventListener('DOMContentLoaded', () => {
+  carregarDadosPerfil();
+  
+  const perfil = perfilManager.getPerfil();
+  atualizarTagsDietas(perfil.dietasPreferidas);
+  
+  const btnSalvar = document.querySelector('#info .btn-roxo');
+  btnSalvar.addEventListener('click', salvarAlteracoesPerfil);
+  
   const abaFavoritasAtiva = document.querySelector('.aba[data-alvo="favoritas"].ativa');
   if (abaFavoritasAtiva) {
     carregarFavoritos();
