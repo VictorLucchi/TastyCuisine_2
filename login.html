@@ -32,16 +32,8 @@
           <option value="">Selecione...</option>
           <option value="usuario">Usuário comum</option>
           <option value="chef">Chef</option>
+          <option value="restaurante">Restaurante</option>
         </select>
-        
-        <label for="idade">Idade (opcional)</label>
-        <input type="number" id="idade" min="1" max="120" />
-        
-        <label for="restricoes">Restrições Alimentares/Alergias (opcional)</label>
-        <textarea id="restricoes" placeholder="Ex: Intolerância à lactose, alergia a amendoim..."></textarea>
-        
-        <label for="dietas-preferidas">Dietas Preferidas (opcional)</label>
-        <input type="text" id="dietas-preferidas" placeholder="Ex: Vegana, Low Carb, Mediterrânea..." />
         
         <button type="submit">Cadastrar</button>
       </form>
@@ -128,9 +120,9 @@
         email: document.getElementById('email-cadastro').value,
         senha: document.getElementById('senha-cadastro').value,
         tipoConta: document.getElementById('tipo-conta').value,
-        idade: document.getElementById('idade').value || null,
-        restricoes: document.getElementById('restricoes').value || '',
-        dietasPreferidas: document.getElementById('dietas-preferidas').value || ''
+        idade: '',
+        restricoes: '',
+        dietasPreferidas: ''
       };
       
       // Salvar no localStorage
