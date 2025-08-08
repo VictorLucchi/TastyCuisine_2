@@ -33,7 +33,7 @@
   <main class="perfil-container">
     <aside class="perfil-card">
       <div class="foto-perfil"></div>
-      <h2>Ayrton Senna</h2>
+      <h2>Ayrton Senna da Silva</h2>
       <p class="email">ayrtonsenna@gmail.com</p>
       <div class="progresso">
         <p>Progresso do Perfil (75%)</p>
@@ -56,10 +56,23 @@
 
       <div class="conteudo info ativa" id="info">
         <h3>Informações Pessoais</h3>
-        <label>Nome</label>
-        <input type="text" value="Ayrton Senna" />
+        <label>Nome Completo</label>
+        <input type="text" value="Ayrton Senna da Silva" />
+        <label>Nome de usuário</label>
+        <input type="text" value="ayrtonsenna" />
         <label>Email</label>
         <input type="email" value="ayrtonsenna@gmail.com" />
+        <label>Idade (opcional)</label>
+        <input type="number" value="34" min="1" max="120" />
+        <label>Restrições Alimentares/Alergias (opcional)</label>
+        <textarea placeholder="Ex: Intolerância à lactose, alergia a amendoim...">Nenhuma restrição alimentar</textarea>
+        <label>Tipo de conta</label>
+        <select>
+          <option value="usuario">Usuário comum</option>
+          <option value="chef">Chef</option>
+        </select>
+        <label>Dietas Preferidas (opcional)</label>
+        <input type="text" placeholder="Ex: Vegana, Low Carb, Mediterrânea..." />
         <button class="btn-roxo">Salvar Alterações</button>
       </div>
 

@@ -171,12 +171,24 @@ nav ul {
   color: #9B5DE5;
 }
 
-.conteudo input {
+.conteudo input,
+.conteudo textarea,
+.conteudo select {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 6px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.conteudo textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.conteudo select {
+  cursor: pointer;
 }
 
 .btn-roxo {
