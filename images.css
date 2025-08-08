@@ -1,0 +1,100 @@
+/* Estilos para imagens das receitas */
+.imagem-receita img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.img-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Placeholder para imagens que ainda não foram carregadas */
+.imagem-receita:empty::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, #ff6b6b, #feca57);
+  border-radius: 8px;
+}
+
+.img-placeholder:empty::before {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #48cae4, #023e8a);
+  border-radius: 50%;
+}
+
+/* Imagens responsivas */
+@media (max-width: 768px) {
+  .imagem-receita img {
+    height: 150px;
+  }
+}
+
+/* Efeito hover nas imagens */
+.card-receita:hover .imagem-receita img {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.card:hover .img-placeholder img {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Seção Hero com imagem de fundo */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 15px;
+  margin: 2rem auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+/* Foto de perfil */
+.foto-perfil img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Cards de receitas no perfil */
+.card .imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
