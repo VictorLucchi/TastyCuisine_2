@@ -271,7 +271,7 @@ nav ul {
 
 .btn-remover {
   padding: 8px;
-  background: #ff6b6b;
+  background: #9B5DE5;
   color: white;
   border: none;
   border-radius: 6px;
@@ -284,7 +284,7 @@ nav ul {
 }
 
 .btn-remover:hover {
-  background: #ff5252;
+  background: #7C3AED;
 }
 
 .sem-favoritas {
